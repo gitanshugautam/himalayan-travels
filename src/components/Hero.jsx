@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp,  FaFacebook } from "react-icons/fa";
 
 export default function Hero() {
   const images = [
@@ -19,37 +19,35 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="w-full bg-white text-black">
+    <div className="w-full text-black">
 
-      {/* 🔥 SMALLER Carousel */}
-   <div className="w-full flex justify-center mt-4">
-  <div className="relative w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] rounded-xl overflow-hidden shadow-lg">
-    
-   <div className="relative w-full h-full">
+      {/* 🔥 Carousel */}
+      <div className="w-full flex justify-center mt-4">
+        <div className="relative w-[98%] sm:w-[95%] md:w-[90%] lg:w-[85%] h-[300px] sm:h-[360px] md:h-[420px] lg:h-[520px] rounded-xl overflow-hidden shadow-lg">
+          
+          {/* background */}
+          <img
+            src={images[index]}
+            alt="bg"
+            className="absolute inset-0 w-full h-full object-cover scale-110 brightness-110 contrast-110"
+          />
 
-  {/* background blur */}
-  <img
-    src={images[index]}
-    alt="bg"
-    className="absolute inset-0 w-full h-full object-cover blur-md scale-110"
-  />
+          {/* main image */}
+          <img
+            src={images[index]}
+            alt="Himachal"
+            className="relative w-full h-full object-cover brightness-110 contrast-110"
+          />
 
-  {/* main image */}
-  <img
-    src={images[index]}
-    alt="Himachal"
-    className="relative w-full h-full object-contain"
-  />
+          {/* text center */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h1 className="text-lg sm:text-2xl md:text-4xl font-bold text-white drop-shadow-lg">
+              Himachal Pradesh
+            </h1>
+          </div>
 
-</div>
-    <div className="absolute inset-0 flex items-end justify-center pb-6">
-     <h1 className="text-base sm:text-xl md:text-3xl font-bold text-center text-white bg-black/40 px-3 py-1 rounded">
-        Himachal Pradesh
-      </h1>
-    </div>
-
-  </div>
-</div>
+        </div>
+      </div>
 
       {/* 🔥 Destinations */}
       <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -60,15 +58,15 @@ export default function Hero() {
           { name: "Uttarakhand", img: "/images/UTTARAKHAND.jpg" },
           { name: "Rajasthan", img: "/images/rajasthan.jpg" },
         ].map((item, i) => (
-          <div key={i} className="relative rounded-lg overflow-hidden">
+          <div key={i} className="relative rounded-lg overflow-hidden group cursor-pointer">
             <img
               src={item.img}
               alt={item.name}
-              className="w-full h-28 sm:h-36 md:h-44 object-cover"
+              className="w-full h-28 sm:h-36 md:h-44 object-cover brightness-110 contrast-110 transition duration-500 group-hover:scale-110 group-hover:brightness-125"
             />
 
             <div className="absolute inset-0 flex items-end justify-center pb-2">
-              <p className="text-xs sm:text-sm md:text-lg font-semibold text-white bg-black/40 px-2 py-1 rounded">
+              <p className="text-xs sm:text-sm md:text-lg font-semibold text-white drop-shadow-md transition group-hover:scale-110">
                 {item.name}
               </p>
             </div>
@@ -78,31 +76,26 @@ export default function Hero() {
       </div>
 
       {/* 🔥 Social */}
-    <div className="flex items-center justify-center gap-6 pt-6">
+      <div className="flex items-center justify-center gap-8 pt-6">
 
-  {/* Instagram */}
-  <FaInstagram className="text-2xl sm:text-3xl cursor-pointer hover:scale-110 transition" />
+  <FaInstagram className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 transition" />
 
-  {/* WhatsApp */}
-  <a
-    href="https://wa.me/918627861923"
-    target="_blank"
-    className="flex flex-col items-center text-center"
-  >
-    <FaWhatsapp className="text-2xl sm:text-3xl hover:scale-110 transition" />
-   
-  </a>
+  <FaFacebook className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 transition" />
+
+  <FaWhatsapp className="text-3xl sm:text-4xl md:text-5xl hover:scale-110 transition" />
 
 </div>
-<div className="w-full text-center mt-8 pb-6 px-4">
-  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">
-    Let’s Make Your Journey Unforgettable ✈️
-  </h2>
 
-  <p className="text-sm sm:text-base text-gray-600 mt-2">
-    Travel with comfort, explore with freedom, and create memories for life.
-  </p>
-</div>
+      {/* 🔥 End Text */}
+      <div className="w-full text-center mt-8 pb-6 px-4">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black">
+          Let’s Make Your Journey Unforgettable ✈️
+        </h2>
+
+        <p className="text-sm sm:text-base text-gray-600 mt-2">
+          Travel with comfort, explore with freedom, and create memories for life.
+        </p>
+      </div>
 
     </div>
   );
