@@ -23,7 +23,7 @@ export default function Navbar() {
 
           <Link
   to="/blog"
-  className="whitespace-nowrap hover:text-yellow-300 transition"
+  className="whitespace-nowrap hover:text-yellow-300 transition"   
 >
   Blog
 </Link>
