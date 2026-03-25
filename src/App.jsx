@@ -1,60 +1,80 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import { FaWhatsapp } from "react-icons/fa";
+import Footer from "./components/Footer";
+import Booking from "./pages/Booking";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 function App() {
   return (
-    <div className="min-h-screen">
+    <BrowserRouter>
 
       <Navbar />
 
-      {/* 🔥 Background Wrapper */}
-      <div className="pt-20 relative">
+      <Routes>
 
-        {/* 📱 Mobile Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover -z-10 md:hidden"
-        >
-          <source src="/bgvideo.mp4" type="video/mp4" />
-        </video>
+        {/* Home */}
+        <Route
+          path="/"
+          element={
+            <div>
 
-        {/* 💻 Laptop Image */}
-       <div className="fixed inset-0 -z-10 hidden md:block">
-  <div className="w-full h-full bg-gradient-to-r from-blue-900 via-indigo-800 to-teal-600 animate-gradient"></div>
-</div>
+              {/* 🔥 HERO VIDEO */}
+              <div className="relative w-full">
 
-        {/* Content */}
-        <div className="relative z-10">
+                {/* Mobile */}
+                <div className="block md:hidden w-full mt-16">
+                  <video autoPlay loop muted playsInline className="w-full h-screen object-cover">
+                    <source src="/videos/video1.mp4" type="video/mp4" />
+                  </video>
+                </div>
 
-          {/* Welcome */}
-          <div className="w-full flex justify-center mt-6 px-4">
-            <div className="text-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-black">
-                Welcome to
-              </h1>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mt-2 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-                Himalayan Tour & Travels
-              </h2>
+                {/* Laptop */}
+                <div className="hidden md:flex w-full h-screen mt-20">
+                  <video autoPlay loop muted className="w-1/3 h-full object-cover">
+                    <source src="/videos/video1.mp4" type="video/mp4" />
+                  </video>
+                  <video autoPlay loop muted className="w-1/3 h-full object-cover">
+                    <source src="/videos/video2.mp4" type="video/mp4" />
+                  </video>
+                  <video autoPlay loop muted className="w-1/3 h-full object-cover">
+                    <source src="/videos/video3.mp4" type="video/mp4" />
+                  </video>
+                </div>
+
+                {/* TEXT */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                  <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+                    Welcome to
+                  </h1>
+                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-semibold mt-2 text-white drop-shadow-lg">
+                    Himalayan Tour & Travels
+                  </h2>
+                  <p className="text-sm sm:text-base md:text-lg text-white mt-3 drop-shadow">
+                    Your Dream Destination, Our Responsibility 🌄
+                  </p>
+                </div>
+
+              </div>
+
+              <Hero />
+
             </div>
-          </div>
+          }
+        />
 
-          <Hero />
-<a
-  href="https://wa.me/918627861923"
-  target="_blank"
-  className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded-full text-2xl shadow-lg hover:scale-110 transition z-50"
->
-  <FaWhatsapp />
-</a>
+        {/* Booking Page */}
+        <Route path="/booking" element={<Booking />} />
+<Route path="/about" element={<About />} />
+<Route path="/contact" element={<Contact />} />
+<Route path="/blog" element={<Blog />} />
+      </Routes>
 
-        </div>
+      <Footer />
 
-      </div>
-
-    </div>
+    </BrowserRouter>
   );
 }
 

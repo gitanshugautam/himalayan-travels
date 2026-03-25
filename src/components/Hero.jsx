@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaInstagram, FaWhatsapp,  FaFacebook } from "react-icons/fa";
+import Packages from "./Packages";
 
 export default function Hero() {
   const images = [
@@ -23,7 +24,7 @@ export default function Hero() {
 
       {/* 🔥 Carousel */}
       <div className="w-full flex justify-center mt-4">
-        <div className="relative w-[98%] sm:w-[95%] md:w-[90%] lg:w-[85%] h-[300px] sm:h-[360px] md:h-[420px] lg:h-[520px] rounded-xl overflow-hidden shadow-lg">
+        <div className="relative w-[98%] sm:w-[95%] md:w-[90%] lg:w-[85%] h-[340px] sm:h-[420px] md:h-[480px] lg:h-[580px] rounded-xl overflow-hidden shadow-lg">
           
           {/* background */}
           <img
@@ -40,8 +41,8 @@ export default function Hero() {
           />
 
           {/* text center */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-lg sm:text-2xl md:text-4xl font-bold text-white drop-shadow-lg">
+          <div className="absolute inset-0 flex items-end justify-center pb-6">
+            <h1 className="text-xl sm:text-3xl md:text-5xl font-extrabold text-white drop-shadow-2xl">
               Himachal Pradesh
             </h1>
           </div>
@@ -50,31 +51,57 @@ export default function Hero() {
       </div>
 
       {/* 🔥 Destinations */}
-      <div className="max-w-7xl mx-auto px-4 py-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+   {/* 🔥 Destinations */}
+<div id="destinations" className="scroll-mt-24 w-full flex justify-center mt-6">
+  <div className="w-[98%] sm:w-[95%] md:w-[90%] lg:w-[85%]">
 
-        {[
-          { name: "Jammu", img: "/images/j.jpg" },
-          { name: "Ladakh", img: "/images/ladakh.jpg" },
-          { name: "Uttarakhand", img: "/images/UTTARAKHAND.jpg" },
-          { name: "Rajasthan", img: "/images/rajasthan.jpg" },
-        ].map((item, i) => (
-          <div key={i} className="relative rounded-lg overflow-hidden group cursor-pointer">
-            <img
-              src={item.img}
-              alt={item.name}
-              className="w-full h-28 sm:h-36 md:h-44 object-cover brightness-110 contrast-110 transition duration-500 group-hover:scale-110 group-hover:brightness-125"
-            />
+    {/* Top 4 images */}
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            <div className="absolute inset-0 flex items-end justify-center pb-2">
-              <p className="text-xs sm:text-sm md:text-lg font-semibold text-white drop-shadow-md transition group-hover:scale-110">
-                {item.name}
-              </p>
-            </div>
+      {[
+        { name: "Jammu", img: "/images/j.jpg" },
+        { name: "Ladakh", img: "/images/ladakh.jpg" },
+        { name: "Uttarakhand", img: "/images/UTTARAKHAND.jpg" },
+        { name: "Rajasthan", img: "/images/rajasthan.jpg" },
+      ].map((item, i) => (
+        <div key={i} className="relative rounded-lg overflow-hidden group cursor-pointer">
+          <img
+            src={item.img}
+            alt={item.name}
+            className="w-full h-40 sm:h-52 md:h-64 lg:h-72 object-cover brightness-110 contrast-110 transition duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 flex items-end justify-center pb-2">
+            <p className="text-xs sm:text-sm md:text-lg font-semibold text-white drop-shadow-md">
+              {item.name}
+            </p>
           </div>
-        ))}
+        </div>
+      ))}
+
+    </div>
+
+    {/* 4 Dham */}
+    <div className="mt-6">
+      <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
+
+        <img
+          src="/images/4_dham.jpg"
+          alt="4 Dham Yatra"
+          className="w-full h-72 sm:h-96 md:h-[480px] lg:h-[560px] object-cover"
+        />
+
+        <div className="absolute inset-0 flex items-end justify-center pb-3">
+         <h2 className="text-lg sm:text-2xl md:text-4xl font-extrabold text-white drop-shadow-2xl">
+            4 Dham Yatra
+          </h2>
+        </div>
 
       </div>
+    </div>
 
+  </div>
+</div>
+<Packages />
       {/* 🔥 Social */}
       <div className="flex items-center justify-center gap-8 pt-6">
 
