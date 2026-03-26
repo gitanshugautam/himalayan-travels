@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { FaInstagram, FaWhatsapp,  FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import Packages from "./Packages";
 
 export default function Hero() {
@@ -105,11 +106,17 @@ export default function Hero() {
       {/* 🔥 Social */}
       <div className="flex items-center justify-center gap-8 pt-6">
 
-  <FaInstagram className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 transition" />
+<a href="https://www.instagram.com/himal_ayantourandtravel" target="_blank">
+  <FaInstagram className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 hover:text-pink-500 transition" />
+</a>
 
-  <FaFacebook className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 transition" />
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=himalayantravel9@gmail.com" target="_blank">
+  <MdEmail className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 hover:text-red-400 transition" />
+</a>
 
-  <FaWhatsapp className="text-3xl sm:text-4xl md:text-5xl hover:scale-110 transition" />
+<a href="https://wa.me/917018546930" target="_blank">
+  <FaWhatsapp className="text-3xl sm:text-4xl md:text-5xl cursor-pointer hover:scale-110 hover:text-green-500 transition" />
+</a>
 
 </div>
 

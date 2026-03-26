@@ -6,9 +6,18 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-3 py-3 flex items-center justify-between">
 
         {/* Logo */}
-        <h1 className="text-sm sm:text-base md:text-xl font-bold tracking-wide whitespace-nowrap">
-          Himalayan Travels
-        </h1>
+       <div className="flex items-center gap-2">
+
+  <img
+    src="/images/logo.jpg"
+    alt="logo"
+    className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 object-contain rounded-full"
+  />
+
+  <h1 className="text-sm sm:text-base md:text-xl font-bold tracking-wide whitespace-nowrap">
+    Himalayan Travels
+    </h1>
+  </div>
 
         {/* Menu */}
         <div className="flex gap-3 text-xs sm:text-sm md:text-base font-medium ml-4 overflow-x-auto scrollbar-hide">

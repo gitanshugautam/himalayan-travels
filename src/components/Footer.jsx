@@ -1,4 +1,5 @@
-import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
@@ -45,18 +46,22 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold mb-3 text-white">Contact</h2>
 
-          <p className="text-sm text-gray-400">📞 8627861923</p>
-          <p className="text-sm text-gray-400 mt-1">📩 just_testing@gmail.com</p>
+          <p className="text-sm text-gray-400">📞 7018546930</p>
+<p className="text-sm text-gray-400 mt-1">📩 himalayantravel9@gmail.com</p>
 
           <div className="flex gap-4 mt-4 text-2xl">
 
-            <FaInstagram className="cursor-pointer hover:scale-110 hover:text-pink-500 transition" />
+           <a href="https://www.instagram.com/himal_ayantourandtravel" target="_blank">
+  <FaInstagram className="cursor-pointer hover:scale-110 hover:text-pink-500 transition" />
+</a>
 
-            <FaFacebook className="cursor-pointer hover:scale-110 hover:text-blue-500 transition" />
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=himalayantravel9@gmail.com" target="_blank">
+  <MdEmail className="cursor-pointer hover:scale-110 hover:text-red-400 transition" />
+</a>
 
-            <a href="https://wa.me/918627861923" target="_blank">
-              <FaWhatsapp className="cursor-pointer hover:scale-110 hover:text-green-500 transition" />
-            </a>
+<a href="https://wa.me/917018546930" target="_blank">
+  <FaWhatsapp className="cursor-pointer hover:scale-110 hover:text-green-500 transition" />
+</a>
 
           </div>
         </div>
